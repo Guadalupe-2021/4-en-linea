@@ -21,8 +21,16 @@ def tableroVacio():
 
 def completarTableroEnOrden(secuencia, tablero):
 	for indice, columna in enumerate(secuencia):
-		fichaNumero= 1+ (indice % 2)
-		soltarFichaEnColumna(fichaNumero, columna, tablero)
+		if columna < 7:
+			if columna >= 1:
+				fichaNumero= 1+ (indice % 2)
+				soltarFichaEnColumna(fichaNumero, columna, tablero)
+			else:
+				print("La columna debe estar entre 1-7")
+				return
+		else:
+			print("La columna debe estar entre 1-7")
+			return
 	return tablero
 
 def soltarFichaEnColumna(ficha, columna, tablero):
