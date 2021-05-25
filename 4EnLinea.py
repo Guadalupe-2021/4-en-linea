@@ -40,13 +40,17 @@ def soltarFichaEnColumna(ficha, columna, tablero):
 			return 
 
 def dibujarTablero(tablero):
+	print(' _   _   _   _   _   _   _ ')
 	for fila in tablero:
+		print('|')
 		for celda in fila:
 			if celda == 0:
 				print(' 0 ', end=' ')
 			else:
 				print(' %s ' % celda, end=' ')
+		print('|')
 		print(' ')
+	print(' _   _   _   _   _   _   _ ')
 
 tablero1=dibujarTablero(completarTableroEnOrden(secuencia_1, tableroVacio()))
 
