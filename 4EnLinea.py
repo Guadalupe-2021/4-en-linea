@@ -40,24 +40,28 @@ def soltarFichaEnColumna(ficha, columna, tablero):
 			return 
 
 def dibujarTablero(tablero):
+	print(' _   _   _   _   _   _   _ ')
 	for fila in tablero:
+		print('|')
 		for celda in fila:
 			if celda == 0:
 				print(' 0 ', end=' ')
 			else:
 				print(' %s ' % celda, end=' ')
+		print('|')
 		print(' ')
+	print(' _   _   _   _   _   _   _ ')
 
-tablero 1=dibujarTablero(completarTableroEnOrden(secuencia_1, tableroVacio()))
+tablero1=dibujarTablero(completarTableroEnOrden(secuencia_1, tableroVacio()))
 
-def contenidoColumna(nro_columna,tablero)
+def contenidoColumna(nro_columna,tablero):
 	columna=[]
 	for fila in tablero:
 		celda=fila[nro_columna - 1]
 		columna.append(celda)
 	return columna
 
-def llamadoColumna(nro,tablero)
+def llamadoColumna(nro,tablero):
 	if nro==0:
 		contenidoColumna(6,tablero)
 		contenidoColumna(5,tablero)
@@ -68,14 +72,14 @@ def llamadoColumna(nro,tablero)
 	else: 
 		contenidoColumna(nro,tablero)
 
-def contenidoFila(nro_fila,tablero)
+def contenidoFila(nro_fila,tablero):
 	fila=[]
 	for columna in tablero:
 		celda=columna[nro_fila - 1]
 		fila.append(celda)
 	return fila
 
-def llamadoFila(nro,tablero)
+def llamadoFila(nro,tablero):
 	if nro==0:
 		contenidoFila(6,tablero)
 		contenidoFila(5,tablero)
@@ -92,7 +96,6 @@ if ver == 1:
 	num1=int(input("Ingrese 0 para ver todas las filas, o un numero del 1-6 para ver una en concreto"))
 	if num1 > 6:
 		print("Numero invalido")
-		return
 	else:
 		llamadoFila(num1,tablero1)
 else:
@@ -100,9 +103,8 @@ else:
 		num2=int(input("Ingrese 0 para ver todas las columnas, o un numero del 1-6 para ver una en concreto"))
 		if num2 > 6:
 			print("Numero invalido")
-			return
 		else:
 			llamadoColumna(num2,tablero1)
 				
 	else:
-		print("saltado")
+		print("Saltado")
